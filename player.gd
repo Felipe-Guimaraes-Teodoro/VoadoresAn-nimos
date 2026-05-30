@@ -5,6 +5,7 @@ extends RigidBody3D
 @export var jump_force := 1.0
 @onready var ground_ray: RayCast3D = $RayCast3D
 @onready var camera: Camera3D = $Camera3D
+@onready var head = $head
 
 var grounded := false
 var yaw := 0.0
@@ -13,8 +14,10 @@ var pitch := 0.0
 func _ready() -> void:
 	axis_lock_angular_x = true
 	axis_lock_angular_z = true
+	axis_lock_angular_y = true
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	can_sleep = false
+	camera.global_position = head.global_position
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -24,14 +27,17 @@ func _unhandled_input(event: InputEvent) -> void:
 		pitch = clamp(pitch, deg_to_rad(-89), deg_to_rad(89))
 
 func _physics_process(dt: float) -> void:
-	rotation.y = yaw
-	camera.rotation.x = pitch
+	camera.rotation = Vector3(pitch, yaw, 0.0)
 	
 	grounded = ground_ray.is_colliding()
 	
-	var basis = Basis(Vector3.UP, yaw)
-	var forward = -basis.z
-	var right = basis.x
+	var forward = -camera.global_basis.z
+	forward.y = 0
+	forward = forward.normalized()
+
+	var right = camera.global_basis.x
+	right.y = 0
+	right = right.normalized()
 	
 	var wishdir = Vector3.ZERO
 	

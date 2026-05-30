@@ -7,13 +7,14 @@ extends RigidBody3D
 @export var drag := 0.02
 @export var side_drag := 8.0
 
-@export var torque_amm := 5.0
+# o quão bom é esse trem (avião) de fazer as manobras
+@export var torque_amm := 2.5
 
 @export var yaw := 0.0
 @export var pitch := 0.0
 @export var roll := 0.0
 
-@onready var engine_sound: AudioStreamPlayer = $propeller/Propeller
+@onready var engine_sound: AudioStreamPlayer3D = $propeller/Propeller
 
 func _ready() -> void:
 	add_to_group("plane")
@@ -56,10 +57,12 @@ func _physics_process(dt: float) -> void:
 	var side_velocity = right * linear_velocity.dot(right)
 	apply_central_force(-side_velocity * side_drag)
 	
+	# o vetor lift já freia o avião o jogador arfar agressivamente
+	
 	var control = clamp(speed * 0.02, 0.0, 1.0)
 	
 	apply_torque(right * pitch * torque_amm * control * forward_speed)
-	apply_torque(up * yaw * torque_amm * control * (lateral_speed/2 + 1))
+	apply_torque(up * yaw * torque_amm * control * forward_speed)
 	apply_torque(forward * roll * torque_amm * control * forward_speed)
 	
 	# centralizar controles

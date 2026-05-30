@@ -8,12 +8,26 @@
 [ext_resource type="PackedScene" uid="uid://bo5neu2vkpsns" path="res://range.tscn" id="6_i5arm"]
 [ext_resource type="AudioStream" uid="uid://ceuvlagrel3nr" path="res://propeller.mp3" id="6_wc5p8"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wc5p8"]
+albedo_color = Color(0.096204735, 0.09620475, 0.096204735, 1)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_a202f"]
+material = SubResource("StandardMaterial3D_wc5p8")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_noarx"]
-size = Vector3(2.0007324, 0.50671387, 1.9423218)
+[sub_resource type="BoxShape3D" id="BoxShape3D_wc5p8"]
+size = Vector3(2, 0.001, 2)
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_noarx"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_jsk3o"]
+size = Vector3(2, 0.001, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4arys"]
+size = Vector3(2, 0.001, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6iypd"]
+size = Vector3(2, 0.001, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tereu"]
+size = Vector3(2, 0.001, 2)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a0tk4"]
 
@@ -255,23 +269,64 @@ friction = 0.1
 [node name="Node3D" type="Node3D" unique_id=2108679824]
 script = ExtResource("1_r3fl7")
 
-[node name="Ground" type="StaticBody3D" parent="." unique_id=1088038250]
+[node name="PISTA" type="StaticBody3D" parent="." unique_id=1088038250]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=242737240]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PISTA" unique_id=242737240]
+transform = Transform3D(1.8214916, 0, 0, 0, 1, 0, 0, 0, 43.03123, 0, 0, 34.862885)
 mesh = SubResource("PlaneMesh_a202f")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=197722137]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0010986328, -0.24664307, 0.027740479)
-shape = SubResource("BoxShape3D_noarx")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PISTA" unique_id=1611509819]
+transform = Transform3D(1.8214916, 0, 0, 0, 1, 0, 0, 0, 43.03123, 0, 0, 34.862885)
+shape = SubResource("BoxShape3D_wc5p8")
+
+[node name="PISTA2" type="StaticBody3D" parent="." unique_id=1991795716]
+transform = Transform3D(-8.7418785, 0, 4.85588, 0, 10, 0, -4.85588, 0, -8.7418785, 1896.9728, 104.63275, -1431.5496)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PISTA2" unique_id=1746385365]
+transform = Transform3D(1.8214916, 0, 0, 0, 1, 0, 0, 0, 43.03123, 0, 0, 34.862885)
+mesh = SubResource("PlaneMesh_a202f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PISTA2" unique_id=1324029535]
+transform = Transform3D(1.8214916, 0, 0, 0, 1, 0, 0, 0, 43.03123, 0, 0, 34.862885)
+shape = SubResource("BoxShape3D_jsk3o")
+
+[node name="PISTA3" type="StaticBody3D" parent="." unique_id=1321114629]
+transform = Transform3D(0.53451395, 0, 9.985704, 0, 10, 0, -9.985704, 0, 0.53451395, -3577.037, 187.17424, -5171.5596)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PISTA3" unique_id=1915300378]
+transform = Transform3D(1.8214916, 0, 0, 0, 1, 0, 0, 0, 43.03123, 0, 0, 34.862885)
+mesh = SubResource("PlaneMesh_a202f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PISTA3" unique_id=943765362]
+transform = Transform3D(1.8214916, 0, 0, 0, 1, 0, 0, 0, 43.03123, 0, 0, 34.862885)
+shape = SubResource("BoxShape3D_4arys")
+
+[node name="PISTA4" type="StaticBody3D" parent="." unique_id=946091608]
+transform = Transform3D(-7.234734, 0, 6.903523, 0, 10, 0, -6.903523, 0, -7.234734, -6836.344, 41.44281, -5322.033)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PISTA4" unique_id=977643299]
+transform = Transform3D(1.8214916, 0, 0, 0, 1, 0, 0, 0, 43.03123, 0, 0, 34.862885)
+mesh = SubResource("PlaneMesh_a202f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PISTA4" unique_id=1058032905]
+transform = Transform3D(1.8214916, 0, 0, 0, 1, 0, 0, 0, 43.03123, 0, 0, 34.862885)
+shape = SubResource("BoxShape3D_6iypd")
+
+[node name="PISTA5" type="StaticBody3D" parent="." unique_id=1634573350]
+transform = Transform3D(4.796877, -0.44499287, 8.763103, -3.7252903e-08, 9.987132, 0.5071496, -8.774394, -0.24327338, 4.7907043, -7103.11, -125.81378, -1304.8147)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PISTA5" unique_id=1094927427]
+transform = Transform3D(1.8214916, 0, 0, 0, 1, 0, 0, 0, 43.03123, 0, 0, 34.862885)
+mesh = SubResource("PlaneMesh_a202f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PISTA5" unique_id=1204139059]
+transform = Transform3D(1.8214916, 0, 0, 0, 1, 0, 0, 0, 43.03123, 0, 0, 34.862885)
+shape = SubResource("BoxShape3D_tereu")
 
 [node name="Player" type="RigidBody3D" parent="." unique_id=729882136]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_noarx")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=406969099]
-gi_mode = 0
-mesh = SubResource("CapsuleMesh_noarx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=825710859]
 shape = SubResource("CapsuleShape3D_a0tk4")
@@ -285,6 +340,9 @@ fov = 80.0
 
 [node name="VIEW" type="RayCast3D" parent="Player/Camera3D" unique_id=1888597903]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 7.7843666e-05, 0)
+
+[node name="head" type="Node3D" parent="Player" unique_id=657574849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6032717, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1477766733]
 environment = SubResource("Environment_r3fl7")
@@ -329,13 +387,20 @@ mesh = SubResource("ArrayMesh_jka67")
 transform = Transform3D(2.7904657e-06, 1.7416262e-08, 1.8006245, 1.772984, 0.017000353, -2.8038291e-06, -0.31428772, 0.09590371, 1.7002402e-07, 0, 3.126853, 8.018414)
 mesh = SubResource("ArrayMesh_r3fl7")
 
-[node name="Propeller" type="AudioStreamPlayer" parent="plane/body/propeller" unique_id=41426973]
+[node name="Propeller" type="AudioStreamPlayer3D" parent="plane/body/propeller" unique_id=514670552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3557356, 6.0227904, -1.110223e-14)
 stream = ExtResource("6_wc5p8")
-volume_db = -20.0
-parameters/looping = true
+attenuation_filter_cutoff_hz = 12000.0
+doppler_tracking = 2
 
 [node name="view_position" type="Node3D" parent="plane/body" unique_id=1664471815]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.47087526, 3.3289938, 4.0214033)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.47087526, 3.85643, 4.0214033)
+
+[node name="view_position2" type="Node3D" parent="plane/body" unique_id=984237601]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.05482483, 3.3289938, 8.592318)
+
+[node name="view_position3" type="Node3D" parent="plane/body" unique_id=1429661394]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.0990963, 4.94444, -14.356028)
 
 [node name="wheel" type="RigidBody3D" parent="plane" unique_id=386121659]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.58774, 0, 6.7217355)
@@ -416,4 +481,4 @@ linear_spring_z/damping = 2.0
 angular_motor_x/target_velocity = 0.5235988
 
 [node name="range" parent="." unique_id=1108756612 instance=ExtResource("6_i5arm")]
-transform = Transform3D(10.399639, 0, 0, 0, 3.230055, 0, 0, 0, 8.629623, 0, -27.493717, 0)
+transform = Transform3D(13.022313, 0, 0, 0, 3.230055, 0, 0, 0, 8.629623, 0, -27.493717, 0)
