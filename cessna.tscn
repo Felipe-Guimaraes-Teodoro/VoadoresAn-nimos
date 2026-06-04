@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://dy86al76va23x"]
-
-[ext_resource type="PackedScene" uid="uid://dl6d3ub54mle0" path="res://cessna.glb" id="1_3i2xh"]
-
-[node name="cessna" unique_id=366176466 instance=ExtResource("1_3i2xh")]

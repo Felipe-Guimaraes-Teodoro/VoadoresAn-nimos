@@ -1,7 +1,7 @@
 extends Node2D
 
 # Caminho para nossa cena principal
-@export_file("*.tscn") var main_game_scene: String = "res://node_3d.tscn"
+@export_file("*.tscn") var main_game_scene: String = "res://cenas/node_3d.tscn"
 
 func _ready():
 	# Mantém o mouse visível

@@ -17,7 +17,7 @@ var yaw := 0.0
 var pitch := 0.0
 
 # Caminho para o menu principal
-@export_file("*.tscn") var menu_game_scene: String = "res://menu.tscn"
+@export_file("*.tscn") var menu_game_scene: String = "res://cenas/menu.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
